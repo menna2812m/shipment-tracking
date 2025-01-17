@@ -1,19 +1,14 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+.order{
+  position: relative;
+  margin-top: 25px;
+  max-width: 970px;
+  margin: auto;
+}
+.header-wrapper{
   background-color: #F3FAFB; 
-  box-sizing: border-box;
-  height: 100vh;
+  height: 258px;
 }
 
-html[dir="rtl"] {
-  direction: rtl;
-}
-
-html[dir="ltr"] {
-  direction: ltr;
-}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -29,3 +24,5 @@ html[dir="ltr"] {
     transform: rotate(360deg);
   }
 }
+
+

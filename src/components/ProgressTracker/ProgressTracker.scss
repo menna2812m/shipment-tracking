@@ -1,0 +1,94 @@
+.progressTracker {
+  margin: 0 auto 18px auto;
+  max-width: 701px;
+  .stepProgressBar {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    list-style: none;
+    padding: 0;
+    // margin: 0;
+    position: relative;
+    width: 100%;
+
+    &__step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      width: 40%;
+      gap: 15px;
+
+      &--current .stepProgressBar__step__title {
+        .stepProgressBar__step__title__label {
+          font-weight: bold;
+        }
+      }
+
+      &--current .stepProgressBar__step__indicator {
+        border: 2px solid #0098a5;
+        background-color: white;
+      }
+      &--completed .stepProgressBar__step__indicator {
+        background-color: #0098a5;
+        color: white;
+      }
+      &__indicator {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid #d3d3d3;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+
+        &__icon-completed {
+          width: 10px;
+          height: 10px;
+        }
+      }
+
+      &__title {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        &__label {
+          margin-top: 8px;
+          font-size: 14px;
+          color: #333;
+        }
+        &__date {
+          font-weight: 400;
+          font-size: 12px;
+        }
+      }
+
+      &:not(:first-child) .stepProgressBar__step__line {
+        position: absolute;
+        top: 11%;
+        left: -50%;
+        height: 2px;
+        width: 100%;
+        transform: translateY(-50%);
+        border-top: 2px dashed #d3d3d3;
+        z-index: 0;
+
+        &--active {
+          border-top: 2px solid #0098a5; /* Active dashed color */
+        }
+      }
+    }
+  }
+
+  .finalStatus {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+  }
+}
