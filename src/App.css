@@ -1,0 +1,34 @@
+.order{
+  position: relative;
+  margin-top: 25px;
+  max-width: 970px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .order{
+    width: 95%;
+    max-width: unset;
+  }
+}
+.header-wrapper{
+  background-color: #F3FAFB; 
+  height: 258px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
