@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: #F3FAFB; 
   box-sizing: border-box;
+  height: 100vh;
 }
 
 html[dir="rtl"] {
