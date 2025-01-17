@@ -9,6 +9,20 @@
     position: relative;
     padding-left: 18px;
     border-left: 5px solid #d0d5dd;
+    @media only screen and (max-width: 768px) {
+      padding-left: 14px;
+      border-left: 4px solid #d0d5dd;
+    }
+    [dir="rtl"] & {
+      padding-right: 18px;
+      border-right: 4px solid #d0d5dd;
+      border-left: unset;
+      @media only screen and (max-width: 768px) {
+        padding-right: 14px;
+        border-right: 4px solid #d0d5dd;
+        border-left: unset;
+      }
+    }
 
     h4 {
       color: #111619;
@@ -34,6 +48,20 @@
       background: #d0d5dd;
       right: 99.2%;
       border-radius: 50%;
+      @media only screen and (max-width: 768px) {
+        right: 98.6%;
+        width: 14px;
+        height: 14px;
+      }
+      [dir="rtl"] & {
+        left: 99.2%;
+        right: auto;
+
+        @media only screen and (max-width: 768px) {
+          left: 98.6%;
+          right: auto;
+        }
+      }
     }
   }
 }

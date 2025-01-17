@@ -25,6 +25,7 @@ function App() {
         {
           headers: {
             "x-requested-by": "Bosta",
+            "accept-language":'ar'
           },
         }
       );

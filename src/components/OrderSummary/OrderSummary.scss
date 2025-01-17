@@ -1,5 +1,8 @@
 .order-summary {
   padding-top: 40px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 30px;
+  }
 }
 .order-summary-card {
   margin-top: 20px;
@@ -31,5 +34,8 @@
   }
   &--body {
     padding-top: 30px;
+    @media only screen and (max-width: 768px) {
+      padding-top: 10px;
+    }
   }
 }

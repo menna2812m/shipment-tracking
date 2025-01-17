@@ -4,13 +4,15 @@
   .stepProgressBar {
     display: flex;
     justify-content: center;
-    // align-items: center;
     list-style: none;
     padding: 0;
-    // margin: 0;
     position: relative;
     width: 100%;
-
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      height: 100%;
+      margin: 0;
+    }
     &__step {
       display: flex;
       flex-direction: column;
@@ -19,7 +21,11 @@
       position: relative;
       width: 40%;
       gap: 15px;
-
+      @media only screen and (max-width: 768px) {
+        flex-direction: row;
+        height: 65px;
+        text-align: unset;
+      }
       &--current .stepProgressBar__step__title {
         .stepProgressBar__step__title__label {
           font-weight: bold;
@@ -77,9 +83,32 @@
         transform: translateY(-50%);
         border-top: 2px dashed #d3d3d3;
         z-index: 0;
+        @media (max-width: 768px) {
+          top: -53%;
+          left: 8%;
+          width: 2px;
+          height: 100%;
+          border-left: 2px dashed #d3d3d3;
+          transform: translateX(-50%);
+        }
 
         &--active {
-          border-top: 2px solid #0098a5; /* Active dashed color */
+          border-top: 2px solid #0098a5;
+          @media (max-width: 768px) {
+            border-left: 2px solid #0098a5;
+          }
+        }
+
+        [dir="rtl"] & {
+          left: auto;
+          right: -50%;
+          transform: translateY(-50%);
+
+          @media (max-width: 768px) {
+            left: auto;
+            right: 7%;
+            transform: translateX(50%);
+          }
         }
       }
     }

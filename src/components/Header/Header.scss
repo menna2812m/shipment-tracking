@@ -5,15 +5,29 @@
   padding: 20px 20px;
   margin: auto;
   max-width: 600px;
+
+  @media only screen and (max-width: 768px) {
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
 }
 .left-section {
-  position: relative; /* Ensure dropdown menu positions relative to its container */
+  position: relative;
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  button {
+    border: none;
+    background: none;
+  }
 }
 
 .dropdown-toggle {
-  font-family: Arial, sans-serif;
   font-size: 14px;
-  color: #333;
+  color: #4f5665;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -37,6 +51,14 @@
   min-width: 100px;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 768px) {
+    left: -39px;
+    [dir="rtl"] & {
+      left: 0;
+    }
+  }
+}
+.actions-wrapper {
 }
 
 .dropdown-item {
@@ -66,4 +88,10 @@
   font-family: Arial, sans-serif;
   font-size: 16px;
   color: #e60000;
+}
+
+.search-btn {
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
 }

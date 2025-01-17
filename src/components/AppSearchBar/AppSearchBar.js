@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./AppSearchBar.css";
+import "./AppSearchBar.scss";
 import search from "../../assets/images/search.svg";
 
 const AppSearchBar = ({ setTrackingNumber }) => {
