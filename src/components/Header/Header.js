@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Header.scss";
 import searchDark from "../../assets/images/search-dark.svg";
+import AppSearchBar from "../AppSearchBar/AppSearchBar";
 
-const Header = () => {
+const Header = ({ setTrackingNumber }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [language, setLanguage] = useState("English");
   const [logoTitle, setLogoTitle] = useState("Bosta");
@@ -11,12 +12,15 @@ const Header = () => {
   const toggleDropdown = () => {
     setIsOpened((prev) => !prev); // Toggle the dropdown state
   };
+
   const toggleLogoTitle = (title) => {
     setLogoTitle(title);
   };
+
   const toggleSearchBar = () => {
     setShowSearchBar((prev) => !prev); // Toggle the search bar
   };
+
   const changeLanguage = (lang) => {
     setLanguage(lang);
     setIsOpened(false); // Close dropdown after selection
@@ -26,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
+    <header className={`header ${showSearchBar ? "expanded" : ""}`}>
       <div className="right-section">
         <span className="company-name">{logoTitle}</span>
       </div>
@@ -55,6 +59,9 @@ const Header = () => {
             </span>
           </div>
         )}
+      </div>
+      <div className="search-bar-container">
+        {showSearchBar && <AppSearchBar setTrackingNumber={setTrackingNumber}/>}
       </div>
     </header>
   );

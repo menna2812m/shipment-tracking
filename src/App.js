@@ -21,15 +21,15 @@ function App() {
   const fetchTrackingData = async (trackingNumber) => {
     try {
       const response = await axios.get(
-        `https://tracking.bosta.co/shipments/track/${trackingNumber}`,
+        `https://tracking.bosta.co/shipments/track/${trackingNumber}?lang=en`,
         {
           headers: {
             "x-requested-by": "Bosta",
-            "accept-language":'ar'
+            "accept-language": "en",
           },
         }
       );
-      
+
       setTrackingData(response.data); // Assuming the response contains the tracking data
       setError(null); // Clear any previous errors
     } catch (err) {
@@ -40,19 +40,17 @@ function App() {
   return (
     <div className="App">
       <section className="header-wrapper">
-        <Header />
+        <Header setTrackingNumber={setTrackingNumber} />
         <AppTrackingSearch setTrackingNumber={setTrackingNumber} />
       </section>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      
-      {trackingData ? (
+      {trackingData && (
         <div className="order">
           <OrderSummary trackingData={trackingData} />
           <TrackingDetails trackingData={trackingData.TransitEvents} />
         </div>
-      ) : (
-        <p>Enter a tracking number to see the details.</p>
       )}
+      ;
     </div>
   );
 }
