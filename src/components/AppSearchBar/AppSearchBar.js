@@ -1,9 +1,9 @@
 
 import React, { useState } from "react";
-import "./AppSearch.css";
+import "./AppSearchBar.css";
 import search from '../../assets/images/search.svg';
 
-const AppSearch = () => {
+const AppSearchBar = () => {
     const [searchQuery, setSearchQuery] = useState("");
   
     const handleSearch = () => {
@@ -27,4 +27,4 @@ const AppSearch = () => {
       </div>
     );
   };
-  export default AppSearch;
+  export default AppSearchBar;
