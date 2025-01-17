@@ -4,7 +4,7 @@ import "./Header.css";
 
 const Header = () => {
   const [isOpened, setIsOpened] = useState(false); // State to track dropdown visibility
-  const [language, setLanguage] = useState("عربي"); // State to track selected language
+  const [language, setLanguage] = useState("English"); // State to track selected language
 
   const toggleDropdown = () => {
     setIsOpened((prev) => !prev); // Toggle the dropdown state
@@ -13,28 +13,37 @@ const Header = () => {
   const changeLanguage = (lang) => {
     setLanguage(lang);
     setIsOpened(false); // Close dropdown after selection
-    console.log(`Language changed to: ${lang}`); // Optional: Log the language change
-  };
+    const direction = lang === "عربي" ? "rtl" : "ltr"; // Set direction based on language
+    document.documentElement.setAttribute("dir", direction);  };
 
   return (
     <header className="header">
+      <div className="right-section">
+        <img src={logo} alt="Logo" className="logo" />
+        <span className="company-name">بوسطة</span>
+      </div>
       <div className="left-section">
         <div onClick={toggleDropdown} className="dropdown-toggle">
           <span>{language}</span>
-          <i className="arrow-down" >&#9660;</i> {/* Down arrow */}
+          <i className="arrow-down">&#9660;</i> {/* Down arrow */}
         </div>
         {/* Dropdown menu */}
         {isOpened && (
           <div className="dropdown-menu">
-            <span className="dropdown-item"  onClick={() => changeLanguage("English")}>English</span>
-            <span className="dropdown-item"  onClick={() => changeLanguage("عربي")}>عربي</span>
+            <span
+              className="dropdown-item"
+              onClick={() => changeLanguage("English")}
+            >
+              English
+            </span>
+            <span
+              className="dropdown-item"
+              onClick={() => changeLanguage("عربي")}
+            >
+              عربي
+            </span>
           </div>
         )}
-      </div>
-
-      <div className="right-section">
-        <img src={logo} alt="Logo" className="logo" />
-        <span className="company-name">بوسطة</span>
       </div>
     </header>
   );

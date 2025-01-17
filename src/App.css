@@ -6,7 +6,13 @@ body {
   box-sizing: border-box;
 }
 
+html[dir="rtl"] {
+  direction: rtl;
+}
 
+html[dir="ltr"] {
+  direction: ltr;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
