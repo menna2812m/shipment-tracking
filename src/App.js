@@ -50,7 +50,7 @@ function App() {
           <TrackingDetails trackingData={trackingData.TransitEvents} />
         </div>
       )}
-      ;
+      
     </div>
   );
 }
